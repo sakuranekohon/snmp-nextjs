@@ -12,7 +12,7 @@ export default function Home() {
       <input type='text' placeholder='Target IP/port' id='targetIP' className={styles.textStyle}></input>
       <input type='text' placeholder='Search OID' id='OID' className={styles.textStyle}></input>
       <button className={styles.buttonStyle} id='Search' onClick={searchBtnClick}>Search</button>
-      <label id='result'></label>
+      <label id='result' className={styles.labelStyle}></label>
     </div>
   );
 }

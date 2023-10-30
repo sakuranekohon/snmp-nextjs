@@ -7,16 +7,22 @@
   align-items: center;
 }
 
-.textStyle{
+.textStyle {
   text-align: center;
   font-size: 1.5rem;
   margin: 5px;
 }
 
-.buttonStyle{
+.buttonStyle {
   font-size: 1rem;
   background-color: aquamarine;
   border-radius: 0.5rem;
   border-color: aqua;
   padding: 5px 10px;
+}
+
+.labelStyle {
+  font-size: 2rem;
+  color: red;
+  margin: 10px;
 }
