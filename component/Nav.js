@@ -1,5 +1,5 @@
 import Link from "next/link";
-import style from "../styles/NavFoot.module.css"
+import style from "../styles/NavFooter.module.css"
 
 export default function Nav({path}) {
     return (

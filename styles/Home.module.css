@@ -8,22 +8,68 @@
   height: 100%;
 }
 
-.textStyle {
-  text-align: center;
-  font-size: 1.5rem;
-  margin: 5px;
-}
-
-.buttonStyle {
-  font-size: 1rem;
-  background-color: aquamarine;
-  border-radius: 0.5rem;
-  border-color: aqua;
-  padding: 5px 10px;
-}
-
 .labelStyle {
   font-size: 2rem;
   color: red;
   margin: 10px;
+}
+
+.textStyle {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.main {
+  display: flex;
+  width: 100%;
+  color: whitesmoke;
+  font-size: 1.5rem;
+}
+
+.main>div:first-child {
+  display: flex;
+  flex-direction: column;
+  min-width: 20%;
+  max-width: 30%;
+  margin: 10px;
+}
+
+.main>div:first-child>div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3px 0 3px 0;
+}
+
+.main>div:first-child>div>input {
+  text-align: center;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  height: 2.5rem;
+  width: 79%;
+}
+
+.main>div:first-child>div:not(.createAndSent)>button {
+  text-align: center;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  height: 2.5rem;
+  width: 20%;
+}
+
+.blueButton {
+  background-color: rgb(0, 183, 255);
+}
+
+.redButton {
+  background-color: #f14a4a;
+}
+
+.createAndSent>button {
+  font-size: 1.2rem;
+  background-color: aquamarine;
+  border-radius: 0.5rem;
+  border-color: aqua;
+  padding: 5px 10px;
+  width: 49%;
 }

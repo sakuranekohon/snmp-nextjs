@@ -1,4 +1,4 @@
-import style from "../styles/NavFoot.module.css"
+import style from "../styles/NavFooter.module.css"
 
 function Message({ title, content }) {
     return (<div>{title + " : " + content}</div>);

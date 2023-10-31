@@ -1,10 +1,31 @@
+import { useState } from "react";
+
+export function buttonEvent_lockIP() {
+    const [currentState, changeState] = useState(false);
+    const lockingBtnClick = () => {
+        changeState(!currentState);
+        const lockTargetIP = document.getElementById('targetIP');
+        lockTargetIP.disabled = currentState;
+        
+    }
+    return {currentState,lockingBtnClick};
+}
+
+export function deleteOIDBtn(){
+    console.log()
+}
+
+export function createOIDBtn(){
+
+}
+
 export const searchBtnClick = () => {
     const targetIP = document.getElementById('targetIP').value;
-    const OID = document.getElementById('OID').value;
+    const OID = document.getElementsByName('OID');
 
     const sentData = {
         targetIP: targetIP,
-        OID: OID
+        OID: OID[0].value
     };
     console.log(sentData);
     fetchData(sentData);

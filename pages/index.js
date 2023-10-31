@@ -1,19 +1,26 @@
 import styles from '../styles/Home.module.css';
 import PageHead from '../component/Head';
 import Nav from '../component/Nav';
-import { searchBtnClick } from '../public/scripts/buttonEvent';
+import { searchBtnClick,buttonEvent_lockIP,deleteOIDBtn,createOIDBtn } from '../public/scripts/HomePageButtonEvent';
 import Foot from '../component/Footer';
+import InputOID from '../component/InputOID';
 
 export default function Home() {
+  const {currentState,lockingBtnClick} = buttonEvent_lockIP();
+
   return (
     <div className={styles.container}>
       <PageHead pageName={"Home Page"} />
       <Nav path={"/"} />
-      <div>
-        <input type='text' placeholder='Target IP' id='targetIP' className={styles.textStyle}></input>
-        <input type='text' placeholder='Search OID' id='OID' className={styles.textStyle}></input>
-        <button className={styles.buttonStyle} id='Search' onClick={searchBtnClick}>Search</button>
-        <label id='result' className={styles.labelStyle}></label>
+      <div className={styles.main}>
+        <div>
+          <div><input type='text' placeholder='Target IP' id='targetIP' className={styles.textStyle} /><button className={styles.blueButton} onClick={lockingBtnClick}>固定</button></div>
+          <InputOID styles={styles} buttonClick={deleteOIDBtn}/>
+          <div className={styles.createAndSent}><button id='CreateOIDText'>Create</button><button id='Search' onClick={searchBtnClick}>Search</button></div>
+        </div>
+        <div>
+          <label id='result' className={styles.labelStyle}></label>
+        </div>
       </div>
       <Foot isHomePage={true} />
     </div>
