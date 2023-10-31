@@ -3,7 +3,7 @@
 暫且疑惑不知道為何不能只使用React.js來寫
 
 ## Using Step
-使用前請先安裝Nodejs
+使用前請先安裝Nodejs  
 Step1: Open project using IDE or Editor  
 Step2: Terminal call "npm run dev"  
 Step3: Web URL input localhost:3000  
