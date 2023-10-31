@@ -1,11 +1,11 @@
 const snmp = require("net-snmp");
 
 export default async function handler(req, res) {
-    if (req.method === 'POST') { 
+    if (req.method === "POST") {
         const { targetIP, OID } = req.body;
 
         const session = snmp.createSession(targetIP, "public");
-        const oid = OID; 
+        const oid = OID;
 
         session.get([oid], (error, varbinds) => {
             if (error) {
