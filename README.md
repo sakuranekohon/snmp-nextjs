@@ -1,5 +1,6 @@
 # 利用Node.js獲取網路管理設備資訊
-使用Next.js框架來達成前後端
+使用Next.js框架來達成前後端分離  
+暫且疑惑不知道為何不能只使用React.js來寫
 
 ## Using Step
 使用前請先安裝Nodejs
@@ -17,3 +18,6 @@ component => 放置自己所寫的元件
 pages => 放置頁面以及api資料夾(後端程式位置)  
 public => 放置圖片、腳本(自己的函示庫)、icon  
 styles => 放置css  
+
+##所使用的SNMP套件
+Link:[net-snmp](https://www.npmjs.com/package/net-snmp)
