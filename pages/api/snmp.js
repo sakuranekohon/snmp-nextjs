@@ -4,10 +4,10 @@ export default async function handler(req, res) {
     if (req.method === "POST") {
         const { targetIP, OID } = req.body;
 
-        const session = snmp.createSession(targetIP, "public");
+        const session = snmp.createSession(targetIP, "public"); //建立與設備的通訊
         const oid = OID;
 
-        session.get([oid], (error, varbinds) => {
+        session.get([oid], (error, varbinds) => {   //varbinds為OID所對應的資訊 如:sysName : ES-2108
             if (error) {
                 console.error(error);
                 res.status(500).end("SNMP request failed");
@@ -17,7 +17,7 @@ export default async function handler(req, res) {
                     result: varbinds[0].value.toString()
                 });
             }
-            session.close();
+            session.close();    //結束通訊
         });
     } else {
         res.status(405).end();
