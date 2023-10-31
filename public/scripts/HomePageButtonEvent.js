@@ -1,4 +1,5 @@
 import { useState } from "react";
+import InputOID from "../../component/InputOID";
 
 export function buttonEvent_lockIP() {
     const [currentState, changeState] = useState(false);
@@ -6,28 +7,38 @@ export function buttonEvent_lockIP() {
         changeState(!currentState);
         const lockTargetIP = document.getElementById('targetIP');
         lockTargetIP.disabled = currentState;
-        
+
     }
-    return {currentState,lockingBtnClick};
+    return { currentState, lockingBtnClick };
 }
 
-export function deleteOIDBtn(){
-    console.log()
+export function deleteOIDBtn(element) {
+    const parentElement = element.nativeEvent.target.closest("div");
+    parentElement.remove();
 }
 
-export function createOIDBtn(){
-
+export function buttonEvent_createOIDBtn(styles) {
+    const [inputOIDList, setInputOIDList] = useState([]);
+    const createOIDBtn = () => {
+        setInputOIDList((prevList) => [
+            ...prevList,
+            <InputOID styles={styles} buttonClick={deleteOIDBtn} />
+        ]);
+    };
+    return { inputOIDList, createOIDBtn }
 }
 
 export const searchBtnClick = () => {
     const targetIP = document.getElementById('targetIP').value;
-    const OID = document.getElementsByName('OID');
+    const OIDElement = document.getElementsByName('OID');
+    const OID = Array.from(OIDElement).map(element=>element.value);
 
     const sentData = {
         targetIP: targetIP,
-        OID: OID[0].value
+        OID: OID
     };
     console.log(sentData);
+    console.log(JSON.stringify(sentData));
     fetchData(sentData);
 
 };
