@@ -16,7 +16,7 @@ export default function Home() {
         <div>
           <div><input type='text' placeholder='Target IP' id='targetIP' className={styles.textStyle} /><button className={styles.blueButton} onClick={lockingBtnClick}>固定</button></div>
           <InputOID styles={styles} buttonClick={deleteOIDBtn}/>
-          <div className={styles.createAndSent}><button id='CreateOIDText'>Create</button><button id='Search' onClick={searchBtnClick}>Search</button></div>
+          <div className={styles.createAndSent}><button id='CreateOIDText' onClick={createOIDBtn}>Create</button><button id='Search' onClick={searchBtnClick}>Search</button></div>
         </div>
         <div>
           <label id='result' className={styles.labelStyle}></label>
