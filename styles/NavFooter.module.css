@@ -25,6 +25,7 @@
     bottom: 0px;
     padding: 0 0 10px 0;
     border-top: 1px solid;
+    max-height: 150px;
 }
 
 .footerContent{
@@ -33,7 +34,7 @@
 }
 
 .footerContent > div{
-    width: 30%;
+    width: 40%;
     margin: 10px 0 0 0;
 }
 .footerContent > div > div{

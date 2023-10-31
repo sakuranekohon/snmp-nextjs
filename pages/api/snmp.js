@@ -2,12 +2,11 @@ const snmp = require("net-snmp");
 
 export default async function handler(req, res) {
     if (req.method === "POST") {
-        const { targetIP, OID } = req.body;
-
+        const { targetIP, length ,OIDs } = req.body;
+        console.log("snmp.js",OIDs)
         const session = snmp.createSession(targetIP, "public"); //建立與設備的通訊
-        const oid = OID;
 
-        session.get([oid], (error, varbinds) => {   //varbinds為OID所對應的資訊 如:sysName : ES-2108
+        session.get(OIDs, (error, varbinds) => {   //varbinds為OID所對應的資訊 如:sysName : ES-2108
             if (error) {
                 console.error(error);
                 res.status(500).end("SNMP request failed");

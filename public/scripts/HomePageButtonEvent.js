@@ -31,11 +31,12 @@ export function buttonEvent_createOIDBtn(styles) {
 export const searchBtnClick = () => {
     const targetIP = document.getElementById('targetIP').value;
     const OIDElement = document.getElementsByName('OID');
-    const OID = Array.from(OIDElement).map(element=>element.value);
+    const OID = Array.from(OIDElement).map((element)=>element.value);
 
     const sentData = {
         targetIP: targetIP,
-        OID: OID
+        length: OIDElement.length,
+        OIDs: OID
     };
     console.log(sentData);
     console.log(JSON.stringify(sentData));
