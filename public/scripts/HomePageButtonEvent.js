@@ -72,7 +72,9 @@ const fetchData = (data) => {
 const displayData = (result) => {
     console.log("DI : ", result);
     const infoList = document.getElementById("infoList");
-    
+    while (infoList.childElementCount != 1) {
+        infoList.removeChild(infoList.lastChild)
+    }
     result.oid.forEach((element, index) => {
         const li = document.createElement('li');
         ReactDOM.render(<InformationList  style={style} OID={element} OIDName={"我好懶這建字典"} OIDinformation={result.deviceName[index]}/>,li);
