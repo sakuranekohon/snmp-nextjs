@@ -5,11 +5,12 @@
 ## Using Step
 使用前請先安裝Nodejs  
 Step1: Open project using IDE or Editor  
-Step2: Terminal call "npm run dev"  
-Step3: Web URL input localhost:3000  
-Step4: Click create button  
-Step5: Textbox input manage device IP and SNMP Objec ID  
-Step6: Click searcj button  
+Step2: Terminal enter "npm install"
+Step3: Terminal enter "npm run dev"  
+Step4: Web URL input localhost:3000  
+Step5: Click create button  
+Step6: Textbox input manage device IP and SNMP Objec ID  
+Step7: Click searcj button  
 
 finish then Output result  
 
