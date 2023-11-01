@@ -19,13 +19,9 @@
 }
 
 .footerPos{
-    position: absolute;
-    right: 0px;
-    left: 0px;
-    bottom: 0px;
     padding: 0 0 10px 0;
     border-top: 1px solid;
-    max-height: 150px;
+    height: 120px;
 }
 
 .footerContent{

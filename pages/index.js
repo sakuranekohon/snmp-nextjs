@@ -2,7 +2,7 @@ import styles from '../styles/Home.module.css';
 import PageHead from '../component/Head';
 import Nav from '../component/Nav';
 import { searchBtnClick, buttonEvent_lockIP, deleteOIDBtn, buttonEvent_createOIDBtn } from '../public/scripts/HomePageButtonEvent';
-import Foot from '../component/Footer';
+import Footer from '../component/Footer';
 import InputOID from '../component/InputOID';
 
 export default function Home() {
@@ -34,7 +34,7 @@ export default function Home() {
           </ul>
         </div>
       </div>
-      <Foot isHomePage={true} />
+      <Footer isHomePage={true} />
     </div>
   );
 }

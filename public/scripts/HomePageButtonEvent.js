@@ -36,6 +36,11 @@ export const searchBtnClick = () => {
     const OIDElement = document.getElementsByName('OID');
     const OID = Array.from(OIDElement).map((element)=>element.value);
 
+    for (let i = 0; i < OID.length; i++) {
+        if(OID[i] === "")
+            OID.splice(i,1);        
+    }
+
     const sentData = {
         targetIP: targetIP,
         length: OIDElement.length,
