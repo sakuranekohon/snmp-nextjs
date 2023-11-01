@@ -2,7 +2,7 @@ import { useState } from "react";
 import InputOID from "../../component/InputOID";
 import InformationList from "../../component/InformationList";
 import style from "../../styles/Home.module.css";
-import { ReactDOM } from "react";
+import ReactDOM from 'react-dom';
 
 export function buttonEvent_lockIP() {
     const [currentState, changeState] = useState(false);
