@@ -73,3 +73,29 @@
   padding: 5px 10px;
   width: 49%;
 }
+.main>div:last-child{
+  border-left: 1px gray solid;
+  width: 80%;
+}
+.listStyle{
+  margin: 0 10px 0 10px;
+  padding: 0;
+  list-style-type: none;
+}
+.listStyle>li{
+  margin: 10px 0 10px 0;
+}
+.listStyle>li>div{
+  display: flex;
+}
+.listStyle>li>div>span{
+  width: 35%;
+  text-align: center;
+}
+.listStyle>li>div>:nth-child(2){
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+.listStyle>li>div>:nth-child(3){
+  width: 30%;
+}

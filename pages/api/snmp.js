@@ -27,7 +27,8 @@ export default async function handler(req, res) {
             }else{
                 console.log("Result:", varbinds);
                 res.status(200).json({
-                    result:Array.from(varbinds).map((element)=>element.value.toString())
+                    oid:Array.from(varbinds).map((element)=>element.oid.toString()),
+                    deviceName:Array.from(varbinds).map((element)=>element.value.toString())
                 });
             }
             session.close();

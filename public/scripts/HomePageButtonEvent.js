@@ -1,5 +1,8 @@
 import { useState } from "react";
 import InputOID from "../../component/InputOID";
+import InformationList from "../../component/InformationList";
+import style from "../../styles/Home.module.css";
+import { ReactDOM } from "react";
 
 export function buttonEvent_lockIP() {
     const [currentState, changeState] = useState(false);
@@ -54,8 +57,7 @@ const fetchData = (data) => {
     })
         .then(res => res.json())
         .then(response => {
-            console.log("SNMP Result", response.result);
-            displayData(response.result);
+            displayData(response);
         })
         .catch(error => {
             console.error("ERROR FETCHING SNMP DATA :", error);
@@ -63,6 +65,12 @@ const fetchData = (data) => {
 };
 
 const displayData = (result) => {
-    const display = document.getElementById('result');
-    display.innerText = result;
+    console.log("DI : ", result);
+    const infoList = document.getElementById("infoList");
+    
+    result.oid.forEach((element, index) => {
+        const li = document.createElement('li');
+        ReactDOM.render(<InformationList  style={style} OID={element} OIDName={"我好懶這建字典"} OIDinformation={result.deviceName[index]}/>,li);
+        infoList.appendChild(li);
+    });
 };

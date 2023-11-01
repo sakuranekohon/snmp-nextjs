@@ -7,7 +7,7 @@ import InputOID from '../component/InputOID';
 
 export default function Home() {
   const { currentState, lockingBtnClick } = buttonEvent_lockIP();
-  const { inputOIDList,createOIDBtn} = buttonEvent_createOIDBtn(styles);
+  const { inputOIDList, createOIDBtn } = buttonEvent_createOIDBtn(styles);
   return (
     <div className={styles.container}>
       <PageHead pageName={"Home Page"} />
@@ -25,8 +25,13 @@ export default function Home() {
           </div>
         </div>
         <div>
-          
-          <label id='result' className={styles.labelStyle}></label>
+          <ul id='infoList' className={styles.listStyle}>
+            <li>
+              <div className={styles.listSize}>
+                <span>OID</span><span>OID Name</span><span>Information</span>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
       <Foot isHomePage={true} />
