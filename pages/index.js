@@ -25,6 +25,7 @@ export default function Home() {
           </div>
         </div>
         <div>
+          
           <label id='result' className={styles.labelStyle}></label>
         </div>
       </div>

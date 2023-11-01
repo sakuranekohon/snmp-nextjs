@@ -3,6 +3,7 @@ const snmp = require("net-snmp");
 export default async function handler(req, res) {
     if (req.method === "POST") {
         const { targetIP, length, OIDs } = req.body;
+        console.loh
         console.log("snmp.js", OIDs)
         const session = snmp.createSession(targetIP, "public"); //建立與設備的通訊
 
