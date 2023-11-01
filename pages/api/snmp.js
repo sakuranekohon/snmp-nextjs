@@ -3,8 +3,9 @@ const snmp = require("net-snmp");
 export default async function handler(req, res) {
     if (req.method === "POST") {
         const { targetIP, length, OIDs } = req.body;
-        console.loh
-        console.log("snmp.js", OIDs)
+        console.log("IP Address : ",targetIP);
+        console.log("total OID : ",length);
+        console.log("OID : ", OIDs);
         const session = snmp.createSession(targetIP, "public"); //建立與設備的通訊
 
         // session.get(OIDs, (error, varbinds) => {   //varbinds為OID所對應的資訊 如:sysName : ES-2108
