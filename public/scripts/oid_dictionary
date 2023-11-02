@@ -202,7 +202,5 @@ export default function oid_dictionary(oid) {
         '1.3.6.1.2.1.5.3': 'icmpInDestUnreachs',
         '1.3.6.1.2.1.5.2': 'icmpInErrors',
     }
-    
-    console.log(oid);
     return dict[oid];
 }
