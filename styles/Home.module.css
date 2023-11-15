@@ -19,7 +19,7 @@
   font-size: 1.3rem;
 }
 
-.main {
+.main,.rmomMain {
   flex: 1;
   display: flex;
   width: 100%;
@@ -99,4 +99,29 @@
 }
 .listStyle>li>div>:nth-child(3){
   width: 30%;
+}
+
+.rmonMainSet{
+}
+
+.rmonSearch{
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-evenly;
+}
+.rmonSearch>input{
+  text-align: center;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  height: 2.5rem;
+  width: 65%;
+}
+.rmonSearch>button{
+  font-size: 1.2rem;
+  background-color: aquamarine;
+  border-radius: 0.5rem;
+  border-color: aqua;
+  padding: 5px 10px;
+  width: 30%;
+  height: 2.5rem;
 }

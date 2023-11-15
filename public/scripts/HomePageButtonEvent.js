@@ -54,7 +54,7 @@ export const searchBtnClick = () => {
 };
 
 const fetchData = (data) => {
-    fetch("../api/snmp", {
+    fetch("../api/snmp/handler", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
