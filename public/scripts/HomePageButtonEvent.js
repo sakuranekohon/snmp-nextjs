@@ -3,6 +3,7 @@ import InputOID from "../../component/InputOID";
 import InformationList from "../../component/InformationList";
 import style from "../../styles/Home.module.css";
 import ReactDOM from 'react-dom';
+import oidDictionary from "../scripts/oid_dictionary"
 
 export function buttonEvent_lockIP() {
     const [currentState, changeState] = useState(false);
@@ -77,7 +78,7 @@ const displayData = (result) => {
     }
     result.oid.forEach((element, index) => {
         const li = document.createElement('li');
-        ReactDOM.render(<InformationList  style={style} OID={element} OIDName={"我好懶這建字典"} OIDinformation={result.deviceName[index]}/>,li);
+        ReactDOM.render(<InformationList  style={style} OID={element} OIDName={oidDictionary(element)} OIDinformation={result.deviceName[index]}/>,li);
         infoList.appendChild(li);
     });
 };
