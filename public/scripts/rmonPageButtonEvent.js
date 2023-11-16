@@ -1,13 +1,13 @@
 
-export function getrmonTable() {
+export default function getrmonTable() {
     var targetIP = document.getElementById('targetIP').value;
-    var rmonOID = "1.3.6.1.2.1.16.1";
+    var rmonOID = "1.3.6.1.2.1.16";
     var searchData = {
         targetIP: targetIP,
         OID: rmonOID,
     }
-    console.log(searchData)
-    fetch("/api/rmon", {
+    console.log(searchData);
+    fetch("../api/rmon", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

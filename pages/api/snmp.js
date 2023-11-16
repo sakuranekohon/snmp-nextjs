@@ -1,6 +1,6 @@
 const snmp = require("net-snmp");
 
-export default async function handler(req, res) {
+export default async function getMIB(req, res) {
     if (req.method === "POST") {
         const { targetIP, length, OIDs } = req.body;
         console.log("IP Address : ",targetIP);
@@ -25,4 +25,3 @@ export default async function handler(req, res) {
         res.status(405).end();
     }
 };
-
