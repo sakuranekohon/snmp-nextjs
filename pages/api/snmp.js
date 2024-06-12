@@ -1,11 +1,20 @@
 const snmp = require("net-snmp");
+import oid_dictionary2 from "../../public/scripts/oid_dictionary2";
 
 export default async function getMIB(req, res) {
     if (req.method === "POST") {
-        const { targetIP, length, OIDs } = req.body;
+        var { targetIP, length, OIDs } = req.body;
         console.log("IP Address : ",targetIP);
         console.log("total OID : ",length);
         console.log("OID : ", OIDs);
+        for (let i = 0; i < OIDs.length; i++) {
+            console.log(OIDs[i].split(".")[0] != '1')
+            if(OIDs[i].split(".")[0] != '1'){
+                OIDs[i] = oid_dictionary2(OIDs[i]);
+            }
+        }
+        console.log("OID : ", OIDs);
+        OIDs = OIDs.filter(OIDs => OIDs !== undefined);
         const session = snmp.createSession(targetIP, "public"); //建立與設備的通訊
         
         session.get(OIDs,(error,varbinds)=>{
